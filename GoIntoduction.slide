@@ -1,0 +1,277 @@
+Go - Introduction
+23 Jan 2017
+
+Piotr Mścichowski
+piotr.mscichowski (at) hybris.com
+
+Adam Szecówka 
+adam.szecowka (at) hybris.com
+
+*  Go is a programming language designed by Google to help solve Google's problems, and Google has big problems
+
+* Problems at Google
+- long builds
+- each programmer using a different subset of the language
+- popular languages are obsolete: C++ (1983), Java(1995), Python(1991) 
+
+* "When builds are slow, there is time to think"
+
+* Go - Key concepts
+*** Scalability
+*** Easy syntax
+	- similar to other known languages
+	- but without repetitions
+.code boring.java 
+.caption Java
+*** Concurrency
+- goroutines
+- channels
+*** Garbage Collector
+
+* Build time - examples
+.image supervisor-build.png 100 _
+.caption Build time - production microservice ~4000 LOC
+.image supervisor-test-time-1.png
+.image supervisor-test-time-2.png
+.caption Tests Execution
+
+* Build time - Go vs Java
+- Simple program: Quadratic equation (~150 LOC)
+- Java: maven + junit
+
+- Java: mvn clean package [s]: 3.19, 2.83, 3.48, 3.53, 3.57, 2.73. Avg: *3.22*
+- go build [s]: 0.19 * 3, 0.18 * 2, 0.26. Avg: 0.198
+- go test [s]: 0.41 *2, 0.40 * 2, 0.43, 0.39. Avg: 0.406
+- go total [s] = 0.198 + 0.406 = *0.604*
+- Diff: 2.61 [s] per build. *5* *times* *faster!* 
+
+* Fast build in go achieved by
+- reduced number of open files
+- no cyclic imports
+- no types hierarchy
+- unused import cause compilation error
+
+
+* Who uses Go?
+- Google: dl.google.com
+.image chrome_server.png
+
+* Who uses Go?
+- Docker
+.image docker.png
+
+* Who uses Go?
+- InfluxDB (Time-series data storage)
+.image influx.png
+
+* Who uses Go?
+- Cloud Foundry
+.image cf.png
+
+* Who uses Go?
+- Uber
+.image uber.png
+
+
+* Go getting started
+- Get and install Go
+.link https://golang.org/dl/ From here
+- Set up GOPATH!
+
+
+* Library imports
+.code imports.go
+
+* Packages
+- packages
+.play -edit packages.go
+
+* Access modifiers
+- Private, protected, public ?
+.code accessModifiers.java
+
+* Access modifiers - The Go way
+.code accesmod.go
+
+
+* Types, functions, vars
+- Function recipe
+.code functionRecipe.go
+- Functions receive arguments as copies
+- Functions can return multiple values
+- Functions can be assigned to variables
+- Functions can return functions
+- Functions can take variadic arguments
+- Function can be definied as types
+
+* Functions
+.play -edit functions.go
+
+* Function part 2.
+.play -edit functionPart2.go  /START OMIT/,/END OMIT/
+
+* Functions part 3
+.play -edit functionPart3.go  /START OMIT/,/END OMIT/
+
+* Functions part 4 - Dude! really ?!
+.play -edit functionsPart4.go
+
+* Vars
+.play -edit  vars.go
+
+* Basic types + zero values
+ - bool 									false
+ - string   								""
+ - int  int8  int16  int32  int64 			0
+ - uint uint8 uint16 uint32 uint64 uintptr  0
+ - byte // alias for uint8                  0
+ - rune // alias for int32                  0
+ - float32 float64                          0.00
+ - complex64 complex128                     0+0i
+ - interface								nil
+ - pointer									nil
+
+
+
+* Constants
+.play -edit const.go
+
+
+
+
+* Structures
+.play -edit structure.go
+
+* Structures
+- In go structures can have functions
+.play -edit structureFunc.go
+
+* Structures
+- So basically structure is like class in Java/C# ?
+- Does structure have constructor ?
+- Overloading ?
+
+* Pointers
+- Wait, WAT?
+.image noo.png
+
+* Pointers
+- var p *int creates pointer to int
+- & makes pointer to operand :
+ name := "Tom"
+ ptr := &name
+
+* Pointers
+.play -edit pointers.go /START OMIT/,/END OMIT/
+
+* Interface
+- contract not an implementation
+.code simpleInterface.go
+- we do not need to 'tell' explicitly which interface we implement
+- lot of interfaces in std lib like in package io
+- duck typing
+
+* Interface type - solution for missing generic types?
+- In go you can use interfaces as type
+.play -edit interfaceType.go   /START OMIT/,/END OMIT/
+- can a function return interface{} ?
+
+* Interfaces continued
+.code -edit  interfaceUsage.go
+
+* Errors and error handling
+- Say goodbye to exceptions
+- Error is an interface
+- So it means that you can create your own errors easily
+
+* Errors and error handling
+.play -edit error.go
+
+* Custom errors
+.play -edit customErrors.go  /START OMIT/,/END OMIT/
+
+* Custom errors
+.play -edit -numbers customErrors.go  /SKIP OMIT/,/SKIP OMIT/
+
+* Arrays
+.play -numbers -edit arrays.go
+
+* Slices
+.play -numbers  -edit slices.go
+
+* Slices slicing
+.play -numbers  -edit slicing.go
+
+* Slices - Tricky part
+.play -numbers -edit slices_tricky_part.go
+
+* Maps
+.play -numbers -edit maps.go /^func main/,/^}/
+
+* Loops
+.play -numbers -edit for.go /^func main/,/^}/
+
+* If
+.play -numbers -edit if.go /^func main/,/^}/
+
+* Defer
+.play -numbers -edit defer.go
+
+* Switch
+.play -numbers -edit switch.go /^func main/,/^}/
+
+* Goroutines 
+*** Goroutine is not OS thread!
+.image os_thread_cost.png 400 _
+.caption From https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Multithreading/CreatingThreads/CreatingThreads.html
+
+
+* Goroutines
+.play -numbers -edit goroutines.go
+
+* Goroutines
+.play -numbers -edit million.go
+
+*  Do not communicate by sharing memory; instead, share memory by communicating. 
+.image chan.png 
+
+* Channels
+.play -numbers -edit channels.go
+
+* Buffered channels
+.play -numbers -edit bufchan.go
+
+* Example: Producer Consumer
+.play -numbers -edit prodcons.go  /^func producer/,/^}/
+.play -numbers -edit prodcons.go  /^func consumer/,/^}/
+
+* Example: Producer Consumer cont.
+.play -numbers -edit prodcons.go  /^func main/,/^}/
+
+* Example: Timeouts
+.code timeouts.go
+
+* Example: "I don't care" Producer
+.play -numbers -edit idontcareproducer.go
+
+* Go tools
+- Govendor
+	Govendor is simillar a little bit to js npm
+- Gofmt
+	Builtin tool used for formatting go code
+- Go vet
+	Vet examines Go source code and reports suspicious constructs.
+- Go present
+	Tool for making presentation (like this one )
+- Lots of them (https://godoc.org/golang.org/x/tools)
+
+
+* Thank you for attention. Do you have questions?
+
+* Links:
+- https://tour.golang.org/
+- https://golang.org/doc/faq
+- https://talks.golang.org/2012/splash.article (Go at Google: Language Design in the Service of Software Engineering)
+- http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang
+- https://eng.uber.com/go-geofence (How We Built Uber Engineering’s Highest Query per Second Service Using Go)
+
