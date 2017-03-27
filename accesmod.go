@@ -1,23 +1,12 @@
-package mylib
-import "fmt"
-func Sum(x, y int) int {
-	return x + y
+Name := "Piotr" //Exported
+id := "1kh2uss73x" //Unexported
+
+//function sayHello is unexported
+func sayHello(){ 
+	fmt.Println("Hello") //fmt.Println is exported
 }
 
-func save(val string) bool {
-	...
+//Exported
+func ExporteMe(){
+
 }
-
-
-package main
-import (
-"myLib"
-"fmt"
-)
-
-func main() {
-	fmt.Println(mylib.Sum(2, 3))
-	mylib.save()
-}
-
-

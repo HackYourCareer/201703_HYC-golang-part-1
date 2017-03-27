@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+//START OMIT
 func main() {
 	var xzibit, says string
 
@@ -11,5 +12,5 @@ func main() {
 	so := "So I put some java code into your go code"
 
 	fmt.Println(xzibit,says,so)
-
 }
+//END OMIT

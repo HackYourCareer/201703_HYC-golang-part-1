@@ -1,9 +1,6 @@
 package main
 import "errors"
-type error interface {
-	Error() string
-}
-
+//START OMIT
 
 func hello(input string) (string,error){
 	if length := len(input); length > 0 {
@@ -13,6 +10,7 @@ func hello(input string) (string,error){
 	}
 
 }
+
 func main(){
 	val,err := hello("")
 
@@ -23,3 +21,4 @@ func main(){
 		println(val)
 	}
 }
+//END OMIT

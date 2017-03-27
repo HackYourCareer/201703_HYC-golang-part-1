@@ -5,12 +5,14 @@ type Person struct {
 	name string
 	lastName string
 }
-func modify(ptr *Person) {
+
+//ptr is a method receiver
+func (ptr *Person) modifyByPtr() {
 	ptr.name = "Tom"
 	ptr.lastName = "Hanks"
 }
-func mod(p Person){
-	p.lastName = "`Wick"
+func (p Person) modifyByValue() {
+	p.lastName = "Wick"
 	p.name = "John"
 }
 func main() {
@@ -19,9 +21,10 @@ func main() {
 		lastName: "Mścichowski",
 	}
 	fmt.Println(me)
-	modify(&me)
+	ptr := &me
+	ptr.modifyByPtr()
 	fmt.Println(me)
-	mod(me)
+	me.modifyByValue()
 	fmt.Println(me)
 }
 //END OMIT

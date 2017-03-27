@@ -10,7 +10,7 @@ func assignMe(key string)(int, error){
 	intVal, err := strconv.Atoi(key)
 
 	if err != nil {
-		return 0,errors.New("A coś Ty mi tu nawpuszczał Wąski ?! ")
+		return 0,errors.New("Nope, nope, nope it won't work ")
 	}
 
 	return intVal*len(key), nil

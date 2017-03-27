@@ -2,12 +2,14 @@ package main
 
 import "fmt"
 
+//START OMIT
 const (
-	PI = 3.13
-        GANDALF_SAYS = "you shall not pass!"
+	Pi             = 3.14
+	Gandalf string = "you shall not pass!"
 )
-func main() {
 
-	fmt.Println(PI)
-	fmt.Println(GANDALF_SAYS)
+func main() {
+	fmt.Println(Pi)
+	fmt.Println(Gandalf)
 }
+//END OMIT

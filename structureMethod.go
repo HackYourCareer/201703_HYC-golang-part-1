@@ -10,7 +10,7 @@ func (p *Player) Name() {
 }
 
 func main(){
-	p := new(Player)
+	p := new(Player) // Another way, new returns pointer, 
 	p.FirstName = "Piotr"
 	p.LastName = "Mścichowski"
 

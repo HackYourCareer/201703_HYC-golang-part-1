@@ -1,11 +1,23 @@
 Go - Introduction
-23 Jan 2017
+29 March 2017
+
+* 
+.image saphybris.jpg _ 800		
+
+Speakers
 
 Piotr Mścichowski
 piotr.mscichowski (at) hybris.com
 
 Adam Szecówka 
 adam.szecowka (at) hybris.com
+
+
+
+* Brought to you by Hack Your Career
+More at FB Page https://www.facebook.com/Hack.your.Career 
+.image hackyourcareer.png
+
 
 *  Go is a programming language designed by Google to help solve Google's problems, and Google has big problems
 
@@ -77,7 +89,7 @@ adam.szecowka (at) hybris.com
 - Get and install Go
 .link https://golang.org/dl/ From here
 - Set up GOPATH!
-
+.code gopathTree.txt
 
 * Library imports
 .code imports.go
@@ -85,16 +97,36 @@ adam.szecowka (at) hybris.com
 * Packages
 - packages
 .play -edit packages.go
+- to install package use go get $REPOSITORY
 
 * Access modifiers
 - Private, protected, public ?
-.code accessModifiers.java
+//Java style
+.code accessModifiers.java 
 
-* Access modifiers - The Go way
+//Golang style
 .code accesmod.go
 
-
 * Types, functions, vars
+
+* Basic types + zero values
+ - bool 									false
+ - string   								""
+ - int  int8  int16  int32  int64 			0
+ - uint uint8 uint16 uint32 uint64 uintptr  0
+ - byte // alias for uint8                  0
+ - rune // alias for int32                  0
+ - float32 float64                          0.00
+ - complex64 complex128                     0+0i
+ - interface								nil
+ - pointer									nil
+
+* Constants & vars
+.play -edit const.go /START OMIT/,/END OMIT/
+
+.play -edit  vars.go /START OMIT/,/END OMIT/
+
+* Functions 
 - Function recipe
 .code functionRecipe.go
 - Functions receive arguments as copies
@@ -110,41 +142,15 @@ adam.szecowka (at) hybris.com
 * Function part 2.
 .play -edit functionPart2.go  /START OMIT/,/END OMIT/
 
-* Functions part 3
-.play -edit functionPart3.go  /START OMIT/,/END OMIT/
-
 * Functions part 4 - Dude! really ?!
 .play -edit functionsPart4.go
-
-* Vars
-.play -edit  vars.go
-
-* Basic types + zero values
- - bool 									false
- - string   								""
- - int  int8  int16  int32  int64 			0
- - uint uint8 uint16 uint32 uint64 uintptr  0
- - byte // alias for uint8                  0
- - rune // alias for int32                  0
- - float32 float64                          0.00
- - complex64 complex128                     0+0i
- - interface								nil
- - pointer									nil
-
-
-
-* Constants
-.play -edit const.go
-
-
-
 
 * Structures
 .play -edit structure.go
 
 * Structures
-- In go structures can have functions
-.play -edit structureFunc.go
+- In go structures can have methods
+.play -edit structureMethod.go
 
 * Structures
 - So basically structure is like class in Java/C# ?
@@ -176,8 +182,6 @@ adam.szecowka (at) hybris.com
 .play -edit interfaceType.go   /START OMIT/,/END OMIT/
 - can a function return interface{} ?
 
-* Interfaces continued
-.code -edit  interfaceUsage.go
 
 * Errors and error handling
 - Say goodbye to exceptions
@@ -185,7 +189,8 @@ adam.szecowka (at) hybris.com
 - So it means that you can create your own errors easily
 
 * Errors and error handling
-.play -edit error.go
+.code errorInterface.go
+.play -edit error.go /START OMIT/,/END OMIT/
 
 * Custom errors
 .play -edit customErrors.go  /START OMIT/,/END OMIT/
@@ -265,6 +270,9 @@ adam.szecowka (at) hybris.com
 	Tool for making presentation (like this one )
 - Lots of them (https://godoc.org/golang.org/x/tools)
 
+* Hackin Gliwice
+.image fb.png
+- More info : https://www.facebook.com/Hackin-Gliwice-1852681074976881 
 
 * Thank you for attention. Do you have questions?
 
