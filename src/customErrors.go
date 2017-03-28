@@ -23,13 +23,11 @@ func newError(status int, errType string, message string) CustomError {
 	return ce
 }
 
-//END OMIT
-//SKIP OMIT
 func process() error {
 	//assume some processing is done here
 	return InternalServerError("Error while calling upstream service")
 }
-
+//END OMIT
 func main() {
 	err := process()
 	if err != nil {
@@ -37,4 +35,3 @@ func main() {
 	}
 }
 
-//SKIP OMIT

@@ -142,7 +142,7 @@ More at FB Page https://www.facebook.com/Hack.your.Career
 * Function part 2.
 .play -edit src/functionPart2.go  /START OMIT/,/END OMIT/
 
-* Functions part 4 - Dude! really ?!
+* Functions part 3 - Dude! really ?!
 .play -edit src/functionsPart4.go
 
 * Structures
@@ -194,9 +194,6 @@ More at FB Page https://www.facebook.com/Hack.your.Career
 
 * Custom errors
 .play -edit src/customErrors.go  /START OMIT/,/END OMIT/
-
-* Custom errors
-.play -edit -numbers src/customErrors.go  /SKIP OMIT/,/SKIP OMIT/
 
 * Arrays
 .play -numbers -edit src/arrays.go
