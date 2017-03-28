@@ -1,23 +1,27 @@
 package main
+
 import "fmt"
-///START OMIT
+
 type Person struct {
-	name string
+	name     string
 	lastName string
 }
 
-//ptr is a method receiver
+///START OMIT
+// method receiver
 func (ptr *Person) modifyByPtr() {
 	ptr.name = "Tom"
 	ptr.lastName = "Hanks"
 }
+
 func (p Person) modifyByValue() {
 	p.lastName = "Wick"
 	p.name = "John"
 }
+
 func main() {
 	me := Person{
-		name: "Piotr",
+		name:     "Piotr",
 		lastName: "Mścichowski",
 	}
 	fmt.Println(me)
@@ -27,4 +31,5 @@ func main() {
 	me.modifyByValue()
 	fmt.Println(me)
 }
+
 //END OMIT

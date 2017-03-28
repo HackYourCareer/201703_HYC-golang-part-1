@@ -7,7 +7,6 @@ type Player interface {
 }
 
 type Test struct {
-
 }
 
 func (t Test) Hello(message string) {

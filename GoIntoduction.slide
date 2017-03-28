@@ -2,7 +2,7 @@ Go - Introduction
 29 March 2017
 
 * 
-.image saphybris.jpg _ 800		
+.image imgs/saphybris.jpg _ 800
 
 Speakers
 
@@ -16,7 +16,7 @@ adam.szecowka (at) hybris.com
 
 * Brought to you by Hack Your Career
 More at FB Page https://www.facebook.com/Hack.your.Career 
-.image hackyourcareer.png
+.image imgs/hackyourcareer.png
 
 
 *  Go is a programming language designed by Google to help solve Google's problems, and Google has big problems
@@ -33,7 +33,7 @@ More at FB Page https://www.facebook.com/Hack.your.Career
 *** Easy syntax
 	- similar to other known languages
 	- but without repetitions
-.code boring.java 
+.code src/boring.java
 .caption Java
 *** Concurrency
 - goroutines
@@ -41,10 +41,10 @@ More at FB Page https://www.facebook.com/Hack.your.Career
 *** Garbage Collector
 
 * Build time - examples
-.image supervisor-build.png 100 _
+.image imgs/supervisor-build.png 100 _
 .caption Build time - production microservice ~4000 LOC
-.image supervisor-test-time-1.png
-.image supervisor-test-time-2.png
+.image imgs/supervisor-test-time-1.png
+.image imgs/supervisor-test-time-2.png
 .caption Tests Execution
 
 * Build time - Go vs Java
@@ -66,46 +66,46 @@ More at FB Page https://www.facebook.com/Hack.your.Career
 
 * Who uses Go?
 - Google: dl.google.com
-.image chrome_server.png
+.image imgs/chrome_server.png
 
 * Who uses Go?
 - Docker
-.image docker.png
+.image imgs/docker.png
 
 * Who uses Go?
 - InfluxDB (Time-series data storage)
-.image influx.png
+.image imgs/influx.png
 
 * Who uses Go?
 - Cloud Foundry
-.image cf.png
+.image imgs/cf.png
 
 * Who uses Go?
 - Uber
-.image uber.png
+.image imgs/uber.png
 
 
 * Go getting started
 - Get and install Go
 .link https://golang.org/dl/ From here
 - Set up GOPATH!
-.code gopathTree.txt
+.code src/gopathTree.txt
 
 * Library imports
-.code imports.go
+.code src/imports.go
 
 * Packages
 - packages
-.play -edit packages.go
+.play -edit src/packages.go
 - to install package use go get $REPOSITORY
 
 * Access modifiers
 - Private, protected, public ?
 //Java style
-.code accessModifiers.java 
+.code src/accessModifiers.java
 
 //Golang style
-.code accesmod.go
+.code src/accesmod.go
 
 * Types, functions, vars
 
@@ -122,13 +122,13 @@ More at FB Page https://www.facebook.com/Hack.your.Career
  - pointer									nil
 
 * Constants & vars
-.play -edit const.go /START OMIT/,/END OMIT/
+.play -edit src/const.go /START OMIT/,/END OMIT/
 
-.play -edit  vars.go /START OMIT/,/END OMIT/
+.play -edit src/vars.go /START OMIT/,/END OMIT/
 
 * Functions 
 - Function recipe
-.code functionRecipe.go
+.code src/functionRecipe.go
 - Functions receive arguments as copies
 - Functions can return multiple values
 - Functions can be assigned to variables
@@ -137,20 +137,20 @@ More at FB Page https://www.facebook.com/Hack.your.Career
 - Function can be definied as types
 
 * Functions
-.play -edit functions.go
+.play -edit src/functions.go
 
 * Function part 2.
-.play -edit functionPart2.go  /START OMIT/,/END OMIT/
+.play -edit src/functionPart2.go  /START OMIT/,/END OMIT/
 
 * Functions part 4 - Dude! really ?!
-.play -edit functionsPart4.go
+.play -edit src/functionsPart4.go
 
 * Structures
-.play -edit structure.go
+.play -edit src/structure.go
 
 * Structures
 - In go structures can have methods
-.play -edit structureMethod.go
+.play -edit src/structureMethod.go
 
 * Structures
 - So basically structure is like class in Java/C# ?
@@ -159,7 +159,7 @@ More at FB Page https://www.facebook.com/Hack.your.Career
 
 * Pointers
 - Wait, WAT?
-.image noo.png
+.image imgs/noo.png
 
 * Pointers
 - var p *int creates pointer to int
@@ -168,18 +168,18 @@ More at FB Page https://www.facebook.com/Hack.your.Career
  ptr := &name
 
 * Pointers
-.play -edit pointers.go /START OMIT/,/END OMIT/
+.play -edit src/pointers.go /START OMIT/,/END OMIT/
 
 * Interface
 - contract not an implementation
-.code simpleInterface.go
+.code src/simpleInterface.go
 - we do not need to 'tell' explicitly which interface we implement
 - lot of interfaces in std lib like in package io
 - duck typing
 
 * Interface type - solution for missing generic types?
 - In go you can use interfaces as type
-.play -edit interfaceType.go   /START OMIT/,/END OMIT/
+.play -edit src/interfaceType.go   /START OMIT/,/END OMIT/
 - can a function return interface{} ?
 
 
@@ -189,75 +189,75 @@ More at FB Page https://www.facebook.com/Hack.your.Career
 - So it means that you can create your own errors easily
 
 * Errors and error handling
-.code errorInterface.go
-.play -edit error.go /START OMIT/,/END OMIT/
+.code src/errorInterface.go
+.play -edit src/error.go /START OMIT/,/END OMIT/
 
 * Custom errors
-.play -edit customErrors.go  /START OMIT/,/END OMIT/
+.play -edit src/customErrors.go  /START OMIT/,/END OMIT/
 
 * Custom errors
-.play -edit -numbers customErrors.go  /SKIP OMIT/,/SKIP OMIT/
+.play -edit -numbers src/customErrors.go  /SKIP OMIT/,/SKIP OMIT/
 
 * Arrays
-.play -numbers -edit arrays.go
+.play -numbers -edit src/arrays.go
 
 * Slices
-.play -numbers  -edit slices.go
+.play -numbers  -edit src/slices.go
 
 * Slices slicing
-.play -numbers  -edit slicing.go
+.play -numbers  -edit src/slicing.go
 
 * Slices - Tricky part
-.play -numbers -edit slices_tricky_part.go
+.play -numbers -edit src/slices_tricky_part.go
 
 * Maps
-.play -numbers -edit maps.go /^func main/,/^}/
+.play -numbers -edit src/maps.go /^func main/,/^}/
 
 * Loops
-.play -numbers -edit for.go /^func main/,/^}/
+.play -numbers -edit src/for.go /^func main/,/^}/
 
 * If
-.play -numbers -edit if.go /^func main/,/^}/
+.play -numbers -edit src/if.go /^func main/,/^}/
 
 * Defer
-.play -numbers -edit defer.go
+.play -numbers -edit src/defer.go
 
 * Switch
-.play -numbers -edit switch.go /^func main/,/^}/
+.play -numbers -edit src/switch.go /^func main/,/^}/
 
 * Goroutines 
 *** Goroutine is not OS thread!
-.image os_thread_cost.png 400 _
+.image imgs/os_thread_cost.png 400 _
 .caption From https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Multithreading/CreatingThreads/CreatingThreads.html
 
 
 * Goroutines
-.play -numbers -edit goroutines.go
+.play -numbers -edit src/goroutines.go
 
 * Goroutines
-.play -numbers -edit million.go
+.play -numbers -edit src/million.go
 
 *  Do not communicate by sharing memory; instead, share memory by communicating. 
-.image chan.png 
+.image imgs/chan.png
 
 * Channels
-.play -numbers -edit channels.go
+.play -numbers -edit src/channels.go
 
 * Buffered channels
-.play -numbers -edit bufchan.go
+.play -numbers -edit src/bufchan.go
 
 * Example: Producer Consumer
-.play -numbers -edit prodcons.go  /^func producer/,/^}/
-.play -numbers -edit prodcons.go  /^func consumer/,/^}/
+.play -numbers -edit src/prodcons.go  /^func producer/,/^}/
+.play -numbers -edit src/prodcons.go  /^func consumer/,/^}/
 
 * Example: Producer Consumer cont.
-.play -numbers -edit prodcons.go  /^func main/,/^}/
+.play -numbers -edit src/prodcons.go  /^func main/,/^}/
 
 * Example: Timeouts
-.code timeouts.go
+.code src/timeouts.go
 
 * Example: "I don't care" Producer
-.play -numbers -edit idontcareproducer.go
+.play -numbers -edit src/idontcareproducer.go
 
 * Go tools
 - Govendor
@@ -271,7 +271,7 @@ More at FB Page https://www.facebook.com/Hack.your.Career
 - Lots of them (https://godoc.org/golang.org/x/tools)
 
 * Hackin Gliwice
-.image fb.png
+.image imgs/fb.png
 - More info : https://www.facebook.com/Hackin-Gliwice-1852681074976881 
 
 * Thank you for attention. Do you have questions?
